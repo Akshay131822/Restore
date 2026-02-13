@@ -1,5 +1,5 @@
 import { Box } from "@mui/material"
-import type { Product } from "../../model/Product"
+import type { Product } from "../../app/model/Product"
 import ProductCard from "./ProductCard"
 
 type Pros={

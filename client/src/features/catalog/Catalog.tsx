@@ -1,15 +1,16 @@
 
-import type { Product } from "../../model/Product"
+import { useEffect, useState } from "react";
+import type { Product } from "../../app/model/Product"
 import ProductList from "./ProductList"
 
-type Props={
-    products :Product[],
-    
-}
-export default function Catalog({products}:Props) {
+export default function Catalog() {
+  const [product,setProduct]= useState<Product[]>([]);
+useEffect(()=>{fetch('https://localhost:5001/api/product/').then(response  =>response.json()).then(data =>setProduct(data))}
+,[]);
+
   return (
     <>
-    <ProductList products={products}/>
+    <ProductList products={product}/>
 
     
     </>
